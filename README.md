@@ -54,3 +54,15 @@ DozerGPT is a fun side project created for the BCR discord server. It is a Disco
    ```
 
 5. Interact with the bot: After running the bot, you can interact with it on your Discord server using slash commands.
+
+### Using `CallFromJS.py`
+
+The `CallFromJS.py` file is used by a separate Discord bot called `dozer-discord-bot`, which is written in JavaScript. This file performs essentially the same function as `main.py`, but integrates with the JavaScript framework of the other bot.
+
+To use `CallFromJS.py`:
+
+1. Ensure the environment variables are set up as described above.
+2. The `dozer-discord-bot` will call this file as needed to process commands and retrieve responses from DozerGPT.
+3. The responses are written to a file (`response.txt`) which the JavaScript bot reads and sends back to the user.
+
+This setup allows for seamless integration between the Python-based DozerGPT and the JavaScript-based `dozer-discord-bot`.
