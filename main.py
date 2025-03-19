@@ -1,8 +1,7 @@
-# Imports
 import datetime
 import discord
 import os
-from dotenv import load_dotenv, dotenv_values
+from dotenv import load_dotenv
 from discord.ext import commands
 import ollama
 import tbapy
@@ -14,7 +13,6 @@ tba = tbapy.TBA(os.getenv("TBA_KEY"))
 
 # Get the event depending on the time of year
 theDate = datetime.datetime.now()
-
 if (theDate.month < 3):
    theEventIWant = None
 
@@ -34,9 +32,8 @@ else:
     theEventIWant = '2025oncmp'
 
 
-# Get data (rankings for an event)
+# Get rankings for an event
 # If there is no data, convey there is no data to the bot by setting data to be "No data", instead of nothing
-
 if(theEventIWant != None):
     rawData = tba.event_rankings(theEventIWant)
     data = str(rawData)
@@ -60,8 +57,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 client = Client(command_prefix="!", intents=intents)
 
-# Specifies which servers the slash command works on
-load_dotenv() #loads the .env file
+# Specifies which server the slash command works on
+load_dotenv()
 GUILD_ID = discord.Object(id=os.getenv("ServerID"))
 
 # This is the slash command
@@ -81,14 +78,11 @@ async def DozerGPT(interaction: discord.Interaction, prompt: str):
 
         #Keep only what's inside the double quotes
         def extract_content(weirdresponse):
-            # This regex matches content inside double quotes
             content_regex = r"content=['\"](.*?)(?=['\"][,])"
             only_text = re.findall(content_regex, weirdresponse)
             matchesfinal = "".join(only_text)
             matchesfinal = matchesfinal.replace(r'\n', '\n')  # This will make sure \n is interpreted as a newline
             return matchesfinal
-
-        #Get the output of the regex
         response = extract_content(weirdresponse)
 
         # Edit the response with the real response
