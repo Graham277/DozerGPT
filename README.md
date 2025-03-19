@@ -1,11 +1,11 @@
 # DozerGPT
 
-DozerGPT is a fun side project created for the BCR discord server. It is a Discord bot built with an LLM  using **Llama 3.2:1b** with **Ollama**. The bot is specifically trained with knowledge about **FIRST Robotics** and our team. It interacts with **The Blue Alliance (TBA)** API to retrieve live **rankings** for the current event your team is participating in.
+DozerGPT is a fun side project created for the BCR discord server. It is a Discord bot built with an LLM using **Llama 3.2:1b** with **Ollama**. The bot is specifically trained with knowledge about **FIRST Robotics** and our team. It interacts with **The Blue Alliance (TBA)** API to retrieve live **rankings** for the current event our team is participating in.
 
 ### Key Features:
-- **Live Event Rankings**: The bot fetches **real-time rankings** for the current event your team is attending from The Blue Alliance API. It does **not** provide any other event data.
-- **FIRST Robotics & Team Knowledge**: The bot is trained with knowledge about FIRST Robotics and your team, answering general questions related to the competition.
-- **Slash Command Interactions**: Users can interact with the bot through a simple slash command in Discord to get relevant FIRST Robotics information, particularly focused on your team and event rankings.
+- **Live Event Rankings**: The bot fetches **real-time rankings** for the current event our team is attending from The Blue Alliance API. It does **not** provide any other event data.
+- **FIRST Robotics & Team Knowledge**: The bot is trained with knowledge about FIRST Robotics and our team, answering general questions related to the competition.
+- **Slash Command Interactions**: Users can interact with the bot through a simple slash command in Discord to get relevant FIRST Robotics information, particularly focused on our team and event rankings.
 
 ## Getting Started
 
@@ -15,7 +15,7 @@ DozerGPT is a fun side project created for the BCR discord server. It is a Disco
 - Some Python packages installed via **pip**:
   - `ollama`
   - `tbapy`
-  - `discord`
+  - `discord` (NOT required if using CallFromJS)
   - `python-dotenv`
 
 ### Setup Instructions
@@ -66,3 +66,7 @@ To use `CallFromJS.py`:
 3. The responses are written to a file (`response.txt`) which the JavaScript bot reads and sends back to the user.
 
 This setup allows for seamless integration between the Python-based DozerGPT and the JavaScript-based `dozer-discord-bot`.
+
+### Important Note
+
+DozerGPT is specifically designed and trained for our team. It fetches event data and rankings only for our team's events and answers questions based on the training data related to our team. It is not applicable to other teams or events outside of our team's participation.
