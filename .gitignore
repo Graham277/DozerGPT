@@ -1,1 +1,5 @@
 .env
+peopledata.txt
+GPTStuff/prompt.txt
+GPTStuff/response.txt
+__pycache__/
