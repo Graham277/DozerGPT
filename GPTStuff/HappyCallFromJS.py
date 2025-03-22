@@ -12,7 +12,7 @@ prompt = sys.argv[1]
 
 # Get the response from dozergpt
 combinedPrompt = 'Respond in less than 2 sentences. \nHere is the prompt from the user:\n' + prompt
-rawResponse = ollama.chat(model='DozerGPT', messages=[{'role': 'user', 'content': combinedPrompt}])
+rawResponse = ollama.chat(model='DozerGPTHappy', messages=[{'role': 'user', 'content': combinedPrompt}])
 weirdresponse = str(rawResponse)
 
 # Keep only what's inside the double quotes function

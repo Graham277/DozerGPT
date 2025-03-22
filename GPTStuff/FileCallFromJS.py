@@ -1,14 +1,11 @@
 import os
 import ollama
 import re
-import sys
 
 # Get the prompt
-# filePath = '/home/dozer/GPTStuff/prompt.txt'
-# with open(filePath, 'r') as file:
-#    prompt = file.read()
-
-prompt = sys.argv[1]
+filePath = '/home/dozer/GPTStuff/prompt.txt'
+with open(filePath, 'r') as file:
+    prompt = file.read()
 
 # Get the response from dozergpt
 combinedPrompt = 'Respond in less than 2 sentences. \nHere is the prompt from the user:\n' + prompt
