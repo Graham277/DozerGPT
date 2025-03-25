@@ -1,12 +1,6 @@
-import os
 import ollama
 import re
 import sys
-
-# Get the prompt
-# filePath = '/home/dozer/GPTStuff/prompt.txt'
-# with open(filePath, 'r') as file:
-#    prompt = file.read()
 
 prompt = sys.argv[1]
 
