@@ -7,7 +7,7 @@ prompt = sys.argv[1]
 style = sys.argv[2]
 
 # Get the response from dozergpt
-combinedPrompt = 'Respond in less than 2 sentences. \nHere is the prompt from the user:\n' + prompt + "Here is the style/emotion that you must use in your response:" + style
+combinedPrompt = 'Respond in less than 2 sentences. \nHere is the prompt from the user:\n' + prompt + "Here is the style/emotion that you must use in your response. Respond in the style of this:" + style
 rawResponse = ollama.chat(model='DozerGPT', messages=[{'role': 'user', 'content': combinedPrompt}])
 weirdresponse = str(rawResponse)
 
