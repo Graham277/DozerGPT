@@ -21,6 +21,6 @@ def extract_content(weirdresponse):
 response = extract_content(weirdresponse)
 
 # Put the data into the file 
-filePath = '/home/dozer/GPTStuff/response.txt'
+filePath = '/home/dozer/DozerGPT/GPTStuff/response.txt'
 with open(filePath, "w") as file:
     file.write(response)
